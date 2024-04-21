@@ -118,6 +118,7 @@ func main() {
 
     //Arrays
     var array [10]int;
+    array[0] = 1;
     fmt.Println(array);
 ;
 }
