@@ -115,5 +115,9 @@ func main() {
     structPointer.X = 5;   // Note that we are not using (*structPointer).X - ease of use
     fmt.Println(v);
     fmt.Println(structPointer);
+
+    //Arrays
+    var array [10]int;
+    fmt.Println(array);
 ;
 }
