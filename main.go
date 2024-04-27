@@ -1,8 +1,8 @@
 package main
 
 import (
-    "fmt"
-    "math/rand"
+	"fmt"
+	"math/rand"
 )
 
 // Functions - parameters type
@@ -117,8 +117,43 @@ func main() {
     fmt.Println(structPointer);
 
     //Arrays
-    var array [10]int;
-    array[0] = 1;
-    fmt.Println(array);
-;
+    var array [2]string
+    array[0] = "Hello"
+    array[1] = "World"
+    fmt.Println(array)
+    fmt.Println(array[0])
+
+    primes := [6]int{2,3,5,7,11,13}
+    fmt.Println(primes);
+
+    // Functions as values
+    fmt.Println(compute(hypotenuse));
+
+    // Functions - Closures
+    pos := adder()
+    for i := 0;i<10;i++ {
+        fmt.Println(pos(i))
+    }
+
+
 }
+
+ //Functions - can be passed around like values
+
+func compute(operation func(int, int) int) int {
+    return operation(3,4);
+}
+
+func hypotenuse(a int, b int) int {
+    return a + b;
+}
+
+// Go Functions can be closures
+func adder() func(int) int {
+    sum := 0
+    return func(x int) int {
+        sum += x
+        return sum
+    }
+}
+
